@@ -11,8 +11,8 @@ const bind = function (io) {
     const userName = niceware.generatePassphrase(2) + "-" + niceware.generatePassphrase(2);
     mapOfUsernames[socket.id] = userName
 
-    console.log("all rooms")
-    console.log(io.sockets.adapter.rooms)
+    // console.log("all rooms")
+    // console.log(io.sockets.adapter.rooms)
     
     // Receive mouse data
     socket.on("userDrawing", renderUserDrawing);
@@ -21,8 +21,8 @@ const bind = function (io) {
     });
 
     socket.on("disconnecting", () => {
-      console.log("Rooms user was in:")   
-      console.log(socket.rooms)
+      // console.log("Rooms user was in:")   
+      // console.log(socket.rooms)
     
 
     })

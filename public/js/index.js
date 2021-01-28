@@ -51,7 +51,7 @@ socket.on("room-not-found", () => {
 
 // * Handle when an opponent joins the room
 socket.on("opponent-joined-room", (data) => {
-  console.log("A USER JOINED MY ROOM");
+  // console.log("A USER JOINED MY ROOM");
   const { user, roomId } = data;
 
   // Remove the spinner
@@ -81,7 +81,7 @@ socket.on("user-joined-room", ({ user, otherUser, roomId }) => {
 
   // Remove the form
   $("#form").css('display', "none")
-  
+
    // Clear the welcome text
    $("#welcome").css('display', 'none')
 
@@ -104,13 +104,13 @@ socket.on("user-joined-room", ({ user, otherUser, roomId }) => {
 
 socket.on("user-left-room", () => {
   alert("user left the room")
-  console.log("user left room")
+  // console.log("user left room")
 })
 //* GAME START
 
 // Handler for Rendering the Canvas
 socket.on("game-start-render-ui", ({ roomId, objectToDraw }) => {
-  console.log("render")
+  // console.log("render")
   // Change attributes of the previous canvas (Remove the id)
   // UserCanvas.remove()
   // OtherCanvas.remove()
@@ -144,8 +144,8 @@ socket.on("game-start-counter", (count) => {
 
 //* GAME END
 socket.on("game-end", ({roomId}) => {
-  console.log("Game End!");
-  console.log(UserCanvas);
+  // console.log("Game End!");
+  // console.log(UserCanvas);
 
   // When the game ends, freeze the canvas
   UserCanvas.mouseDragged = function () {
