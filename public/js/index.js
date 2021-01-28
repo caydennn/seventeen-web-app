@@ -110,6 +110,8 @@ socket.on("user-left-room", () => {
 
 // Handler for Rendering the Canvas
 socket.on("game-start-render-ui", ({ roomId, objectToDraw }) => {
+  $("#next-button").css("display", "none")
+  
   // console.log("render")
   // Change attributes of the previous canvas (Remove the id)
   // UserCanvas.remove()
@@ -162,7 +164,6 @@ socket.on("game-end", ({roomId}) => {
   $("#next-button").on("click", function () {
     
     socket.emit("start-game-trigger", { roomId });
-   $("#next-button").css("display", "none")
 
     //   $('#start-game-container').empty()
   });

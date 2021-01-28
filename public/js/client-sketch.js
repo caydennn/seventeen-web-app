@@ -14,8 +14,8 @@ function prepareUserCanvas(roomId) {
 
     p.setup = function () {
       // p.createCanvas(700, 500);
-      let _p = p.createCanvas(600, 600);
-      _p.id("user-canvas")
+       p.createCanvas(600, 600);
+    //  ("user-canvas")
       p.frameRate(60);
       p.background(90);
       // p.id("test")
@@ -29,11 +29,13 @@ function prepareUserCanvas(roomId) {
         x: p.mouseX,
         y: p.mouseY,
       };
+console.log("Sending Out:")
+      console.log(data.x, data.y)
       // Send the data
       socket.emit("userDrawing", data);
       p.noStroke();
       p.fill(255);
-      p.ellipse(p.mouseX, p.mouseY, 20, 20);
+      p.ellipse(data.x, data.y, 20, 20);
     };
   };
   
@@ -47,6 +49,9 @@ function prepareOtherCanvas() {
 // Opponent Canvas to see what the opponent is drawing
 const otherCanvas = (otherP) => {
   function newDrawing(data) {
+console.log("Receiving:")
+
+    console.log(data.x, data.y)
     otherP.noStroke();
     otherP.fill(255, 0, 3);
     otherP.ellipse(data.x, data.y, 20, 20);
@@ -54,8 +59,8 @@ const otherCanvas = (otherP) => {
 
   otherP.setup = function () {
     // otherP.createCanvas(700, 500);
-    let _otherP = otherP.createCanvas(600, 600);
-    _otherP.id("opponent-canvas")
+    otherP.createCanvas(600, 600);
+    // _otherP.id("opponent-canvas")
     otherP.frameRate(60);
     otherP.background(90);
 
