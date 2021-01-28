@@ -80,7 +80,7 @@ const bind = function (io) {
       // Get a random object
       const objectToDraw = getRandomItem(drawObjects)
 
-      var counter = 15;
+      var counter = 17;
       var Countdown = setInterval(function () {
         io.in(roomId).emit("game-start-counter", counter);
         // socket.emit("hello", counter);
