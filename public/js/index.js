@@ -114,11 +114,9 @@ socket.on("game-start-render-ui", ({ roomId, objectToDraw }) => {
   // Change attributes of the previous canvas (Remove the id)
   // UserCanvas.remove()
   // OtherCanvas.remove()
-  $("#left").empty()
-  $("#right").empty()
   $("#object-label-container").empty()
 
-  // Insert a template game div after the header for the next game session
+  
 
 
   // Render Canvas
@@ -151,6 +149,9 @@ socket.on("game-end", ({roomId}) => {
   UserCanvas.mouseDragged = function () {
     return;
   };
+  UserCanvas.draw = function () {
+    return;
+  };
 
   // Change the timer text
   $("#safeTimerDisplay").text(`Time's Up!!`);
@@ -161,6 +162,8 @@ socket.on("game-end", ({roomId}) => {
   $("#next-button").on("click", function () {
     
     socket.emit("start-game-trigger", { roomId });
+   $("#next-button").css("display", "none")
+
     //   $('#start-game-container').empty()
   });
 });

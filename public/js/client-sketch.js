@@ -5,10 +5,12 @@ let UserCanvas
 let OtherCanvas
 
 function prepareUserCanvas(roomId) {
+  $("#left").empty()
+
   // User Canvas for user to draw on
   const userCanvas = (p) => {
     const userId = socket.id;
-    console.log(socket);
+    // console.log(socket);
 
     p.setup = function () {
       // p.createCanvas(700, 500);
@@ -40,6 +42,8 @@ UserCanvas = new p5(userCanvas, "left");
 }
 
 function prepareOtherCanvas() {
+  $("#right").empty()
+
 // Opponent Canvas to see what the opponent is drawing
 const otherCanvas = (otherP) => {
   function newDrawing(data) {
