@@ -2,7 +2,7 @@ const http = require('http');
 const path = require('path');
 const express = require('express');
 const socket = require('socket.io');
-const sketching = require('./src/sketching')
+const sketching = require('./src/server-sketch')
 
 // const heartbeat = require('./src/heartbeat');
 // const messaging = require('./src/messaging');
@@ -25,9 +25,27 @@ app.use(express.static(root + '/public'));
 const io = socket(server)
 sketching.bind(io)
 
+
+
+
+
+
+
 app.get('/yikes', (req, res) => {
     res.sendFile('/public/yikes.html' , { root })
 })
+
+
+
+
+/*
+/6969
+
+localhost:8080/ 
+localhost:8080/yikes
+localhost:8080/6969
+
+*/
 
 
 server.listen(PORT, HOST, () => {

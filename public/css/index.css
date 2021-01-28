@@ -1,0 +1,57 @@
+html {
+  background-color: bisque;
+}
+
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.grid-container {
+  background-color: bisque;
+
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+  width: 100vw;
+  height: 100vh;
+}
+
+.grid-item {
+  background-color: bisque;
+
+  /* border: 1px solid rgba(0, 0, 0, 0.8); */
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+body {
+  text-align: center;
+}
+form {
+  display: inline-block;
+}
+#header {
+  text-align: center;
+  /* display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    justify-content: space-between; */
+}
+
+#room-info {
+}
