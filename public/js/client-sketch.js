@@ -1,4 +1,3 @@
-const HOST = window.location.host;
 
 function prepareUserCanvas(roomId) {
   $("#left").empty();
@@ -29,13 +28,11 @@ function prepareUserCanvas(roomId) {
       x: p.mouseX,
       y: p.mouseY,
     };
-    console.log("Sending Out:");
-    console.log(data.x, data.y);
     // Send the data
     socket.emit("userDrawing", data);
     p.noStroke();
     p.fill(255);
-    p.ellipse(data.x, data.y, 20, 20);
+    p.ellipse(data.x, data.y, 10, 10);
   };
 
   return myCanvas;
@@ -48,12 +45,10 @@ function prepareOtherCanvas() {
   // Opponent Canvas to see what the opponent is drawing
   const otherCanvas = (otherP) => {
     function newDrawing(data) {
-      console.log("Receiving:");
 
-      console.log(data.x, data.y);
       otherP.noStroke();
       otherP.fill(255, 0, 3);
-      otherP.ellipse(data.x, data.y, 20, 20);
+      otherP.ellipse(data.x, data.y, 10, 10);
     }
 
     otherP.setup = function () {

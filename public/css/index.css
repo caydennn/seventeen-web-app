@@ -1,4 +1,26 @@
-html {
+.custom-input {
+  width: 100% !important;
+  text-align: center;
+}
+
+.card {
+  border: none;
+  background-color: bisque;
+
+}
+
+.col {
+  text-align: center;
+}
+
+.center-col-items {
+  align-items: center;
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.container , html, body{
   background-color: bisque;
 }
 
@@ -20,30 +42,14 @@ html {
   }
 }
 
-.grid-container {
-  background-color: bisque;
-
-  display: grid;
-  grid-template-columns: auto auto auto;
-  padding: 10px;
-  width: 100vw;
-  height: 100vh;
+.center_div {
+  margin: 0 auto;
+  width: 80%; /* value of your choice which suits your alignment */
 }
 
-.grid-item {
-  background-color: bisque;
-
-  /* border: 1px solid rgba(0, 0, 0, 0.8); */
-  padding: 20px;
-  font-size: 30px;
-  text-align: center;
-}
-
-body {
-  text-align: center;
-}
 form {
   display: inline-block;
+  text-align: center;
 }
 #header {
   text-align: center;
@@ -51,7 +57,4 @@ form {
     align-items: flex-start;
     flex-direction: row;
     justify-content: space-between; */
-}
-
-#room-info {
 }
