@@ -1,4 +1,4 @@
-#  ![logo](D:\Coding\0.Tutorials\IAP - Realtime Web Apps\realtime-2p-canvas\logo.png) Seventeen
+#  ![logo](.\logo.png) Seventeen
 
 ### Get to know someone in 17 seconds
 
