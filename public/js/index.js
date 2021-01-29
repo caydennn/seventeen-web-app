@@ -7,6 +7,26 @@ var button = document.getElementById("submit-room-id");
 
 var messages = document.getElementById("messages");
 
+// const stateMachine = {
+//   currentState: 'lobby',
+//   gameStart() {
+//     this.currentState = 'in_progress'
+//   },
+//   timeOut () {
+//     this.currentState = 'time_out'
+//   },
+//   joinRoom: (roomId, socket) => {
+
+//   },
+//   onJoinRoom(roomId, socket) {
+//     socket.
+//   }
+// }
+
+// socket.io('user_joined_room', (roomId)=>stateMachine.onJoinRoom(roomId, socket))
+
+
+
 // button.addEventListener("click", function () {
 //   //   window.location = "/yikes";
 //   // console.log(socket)
@@ -51,6 +71,7 @@ socket.on("room-not-found", () => {
 
 // * Handle when an opponent joins the room
 socket.on("opponent-joined-room", (data) => {
+
   // console.log("A USER JOINED MY ROOM");
   const { user, roomId } = data;
 
@@ -76,6 +97,8 @@ socket.on("opponent-joined-room", (data) => {
   });
 });
 
+let myCanvas;
+let OtherCanvas;
 // * Handle when you join a room
 socket.on("user-joined-room", ({ user, otherUser, roomId }) => {
 
@@ -110,6 +133,13 @@ socket.on("user-left-room", () => {
 
 // Handler for Rendering the Canvas
 socket.on("game-start-render-ui", ({ roomId, objectToDraw }) => {
+
+  if(!myCanvas || !OtherCanvas) {
+    myCanvas = prepareUserCanvas(roomId);
+    OtherCanvas = prepareOtherCanvas();
+  }
+
+  myCanvas.canDraw = true;
   $("#next-button").css("display", "none")
   
   // console.log("render")
@@ -123,8 +153,8 @@ socket.on("game-start-render-ui", ({ roomId, objectToDraw }) => {
 
   // Render Canvas
   $("#start-game-container").css("display", "none")
-  prepareUserCanvas(roomId);
-  prepareOtherCanvas();
+  myCanvas.reset();
+  OtherCanvas.background(90);
 
   // Render object to draw
   var objectToDrawLabel = $("<pre></pre>").text(`Draw a: `);
@@ -148,12 +178,14 @@ socket.on("game-end", ({roomId}) => {
   // console.log(UserCanvas);
 
   // When the game ends, freeze the canvas
-  UserCanvas.mouseDragged = function () {
-    return;
-  };
-  UserCanvas.draw = function () {
-    return;
-  };
+  console.log("== NO LOOP")
+  myCanvas.canDraw = false;
+  // UserCanvas.mouseDragged = function () {
+  //   return;
+  // };
+  // UserCanvas.draw = function () {
+  //   return;
+  // };
 
   // Change the timer text
   $("#safeTimerDisplay").text(`Time's Up!!`);
