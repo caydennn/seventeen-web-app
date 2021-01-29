@@ -1,4 +1,4 @@
-#  ![logo](.\logo.png) Seventeen
+#  ![logo](https://github.com/caydennn/iap-submission/blob/main/logo.png) Seventeen
 
 ### Get to know someone in 17 seconds
 
