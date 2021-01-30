@@ -69,6 +69,13 @@ Below are some minor issues/bugs that are known to exist.
 
 - When drawing on a tablet, the browser scrolls with the drag action (making it impossible to draw anything sensible)
 
+
+---
+
+
+
+[Submission for the Introduction to Realtime Web Apps IAP] (http://realtime-apps-iap.github.io/competition)
+
   
 
 
