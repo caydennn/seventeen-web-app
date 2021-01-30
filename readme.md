@@ -74,8 +74,8 @@ Below are some minor issues/bugs that are known to exist.
 
 
 
-[Submission for the Introduction to Realtime Web Apps IAP] (http://realtime-apps-iap.github.io/competition)
-
+[Submission for the Introduction to Realtime Web Apps IAP](http://realtime-apps-iap.github.io/competition)
+[Submission for the 3DC Google Tech Challenge](https://3dc.opensutd.org/gtc/)
   
 
 
