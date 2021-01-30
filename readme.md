@@ -12,9 +12,7 @@ Seventeen is a website where you have 17 seconds to share about yourself to your
 
 ## :runner: Getting Started
 
-You can check out Seventeen over 
-
-[here]: https://realtime-2p-canvas.herokuapp.com/	"Seventeen"
+You can check out Seventeen over [here](https://realtime-2p-canvas.herokuapp.com).
 
 1. Create a room or join your friend's room via entering their Room ID (that they have to send to you)
 2. If you're a host, click start. If not, wait for the host to start the game.
