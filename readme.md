@@ -4,7 +4,9 @@
 
 Want to get know someone better, but don't have the patience to talk to them? 
 
-Seventeen is a website where you have 17 seconds to share about yourself to your friend, in a thousand words (aka a drawing)
+Seventeen is a website where you use drawings to understand your friend better and learn how they perceive the world, without speaking a single world.
+All in 17 seconds.
+
 
 ---
 
